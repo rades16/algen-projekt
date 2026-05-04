@@ -1,0 +1,197 @@
+import base64
+
+
+html_content = """
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algen: Super-Rohstoff der Zukunft</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Roboto:wght@400;500&display=swap');
+
+        :root {
+            --primary: #006994; /* Deep Ocean Blue */
+            --secondary: #2E8B57; /* Seaweed Green */
+            --accent: #E0FFFF; /* Light Cyan */
+            --text: #ffffff;
+            --dark: #002b36;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #d1d1d1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary);
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: rgba(46, 139, 87, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--secondary);
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">Zukunftsprojekt: Landwirtschaft & Ernährung</div>
+    <h1>ALGEN</h1>
+    <p class="subtitle">Der Super-Rohstoff der Zukunft</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>1. Unser Ansatz & Beispiele</h2>
+        <p>Algen sind die effizientesten Organismen der Welt. Wir konzentrieren uns auf zwei Schlüsselbereiche:</p>
+        <div class="grid">
+            <div class="card">
+                <span class="icon">🥗</span>
+                <h3>Superfood</h3>
+                <p><b>Spirulina & Chlorella:</b> Diese Mikroalgen liefern massiv Proteine, Vitamine und Omega-3 Fettsäuren bei minimalem Flächenverbrauch.</p>
+            </div>
+            <div class="card">
+                <span class="icon">♻️</span>
+                <h3>Bioplastik</h3>
+                <p><b>Makroalgen:</b> Sie dienen als Basis für biologisch abbaubare Verpackungen, die Plastik ersetzen und das Meer schützen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. Klima & Wasser</h2>
+        <div class="grid">
+            <div>
+                <h3>CO2-Speicher</h3>
+                <p>Algen binden bis zu 10-mal mehr Kohlendioxid als Wälder an Land. Damit sind sie ein aktives Werkzeug gegen den Klimawandel.</p>
+            </div>
+            <div>
+                <h3>Wassernutzung</h3>
+                <p>Kein Frischwasser nötig! Algen wachsen im Meer oder in Kreislaufanlagen, wodurch wertvolle Trinkwasserreserven geschont werden.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Ernährungssicherung</h2>
+        <p><b>Vorteile:</b> Schnelles Wachstum (bis zu 30cm/Tag), keine Pestizide nötig, extrem nährstoffreich.</p>
+        <p><b>Nachteile:</b> Hohe Produktionskosten in Europa und die Akzeptanz der Verbraucher beim Geschmack.</p>
+    </section>
+
+    <section>
+        <h2>4. Potentiale & Hemmnisse</h2>
+        <div class="card">
+            <h3>Lokale & Globale Ebene</h3>
+            <p>Global können Algen die Fleischproduktion ersetzen. Lokal können Küstenregionen neue Wirtschaftszweige durch Algen-Farmen aufbauen. Das größte Hemmnis ist aktuell noch die komplexe EU-Zulassung für neue Algenarten.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Strategische Bewertung</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Effizienz & Konsistenz</h3>
+                <p>Algen nutzen Sonnenlicht und Nährstoffe hocheffizient. Sie passen perfekt in die <b>Kreislaufwirtschaft</b> (Circular Economy).</p>
+            </div>
+            <div class="card">
+                <h3>Suffizienz</h3>
+                <p>Algenprodukte fördern einen nachhaltigen Konsum ("Weniger ist Mehr"), da sie mit wenig Aufwand maximale Energie liefern.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>von Schülern 10.3 für die Schulmesse 2026</footer>
+
+</body>
+</html>
+"""
+
